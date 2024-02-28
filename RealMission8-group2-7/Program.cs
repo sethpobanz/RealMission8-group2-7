@@ -8,7 +8,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<Mission8ApplicationContext>(options =>
 {
-    options.UseSqlite(builder.Configuration["ConnectionStrings:mission8Connection"]);
+    options.UseSqlite(builder.Configuration["ConnectionStrings:connect"]);
 });
 
 var app = builder.Build();
