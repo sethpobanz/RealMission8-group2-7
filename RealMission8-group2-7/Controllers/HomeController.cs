@@ -6,11 +6,11 @@ namespace RealMission8_group2_7.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private ITaskRepository _repo;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ITaskRepository temp)
         {
-            _logger = logger;
+            _repo = temp;
         }
 
         public IActionResult Index()
@@ -18,7 +18,43 @@ namespace RealMission8_group2_7.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Quadrant()
+        {
+            var tasks = _repo.Tasks.ToList();
+            return View(tasks);
+        }
+
+        [HttpGet]
+        public IActionResult Form()
+        {
+            return View(new TaskModel());
+        }
+
+        [HttpPost]
+        public IActionResult Form(TaskModel response)
+        {
+            _repo.AddTask(response);
+
+            return RedirectToAction("Quadrant");
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var recordToEdit = _repo.Tasks.Single(x => x.TaskId == id);
+
+            return View("Form", recordToEdit);
+        }
         
+        [HttpPost]
+        public IActionResult Edit(TaskModel updatedMovie)
+        {
+            _repo.UpdateTask(updatedMovie);
+
+            return RedirectToAction("Quadrant");
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

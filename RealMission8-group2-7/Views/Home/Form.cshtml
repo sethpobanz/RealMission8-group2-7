@@ -1,0 +1,52 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@{
+    ViewData["Title"] = "Edit Page";
+}
+@model RealMission8_group2_7.Models.TaskModel
+
+<h1>Update or Add Task Form</h1>
+
+<form method="post">
+
+    <input type="hidden" asp-for="TaskId" />
+    <label asp-for="quadrant">Quadrant</label>
+    <select asp-for="quadrant">
+        <option>Quadrant 1 : Urgent and Important</option>
+        <option>Quadrant 2 : Not Urgent but Important</option>
+        <option>Quadrant 3 : Urgent but Not Important</option>
+        <option>Quadrant 4 : Not Urgent and Not Important</option>
+    </select>
+
+    <br />
+    <label asp-for="task">Task</label>
+    <input type="text" asp-for="task"/>
+
+    <br />
+    <label asp-for="category">Category</label>
+    <select asp-for="category">
+        <option>Home</option>
+        <option>School</option>
+        <option>Work</option>
+        <option>Church</option>
+    </select>
+
+    <br />
+    <label asp-for="duedate">Due Date</label>
+    <input type="text" asp-for="duedate"/>
+
+    <br />
+    <label asp-for="completed">Task Completed?</label>
+    <select asp-for="completed">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
+
+    <br />
+    <button>Submit</button>
+</form>
+

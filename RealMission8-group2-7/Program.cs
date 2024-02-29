@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Real_Mission8_group2_7.Models;
+using RealMission8_group2_7.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +10,7 @@ builder.Services.AddDbContext<Mission8ApplicationContext>(options =>
 {
     options.UseSqlite(builder.Configuration["ConnectionStrings:connect"]);
 });
+builder.Services.AddScoped<ITaskRepository, EFTaskRepository>();
 
 var app = builder.Build();
 

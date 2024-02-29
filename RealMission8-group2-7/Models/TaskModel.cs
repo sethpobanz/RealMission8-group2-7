@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
-namespace Real_Mission8_group2_7.Models
+namespace RealMission8_group2_7.Models
 {
     public class TaskModel
     {
@@ -11,7 +11,7 @@ namespace Real_Mission8_group2_7.Models
         public string task { get; set; }
         public DateOnly? duedate { get; set; }
         public string quadrant { get; set; }
-        public int? category { get; set; }
+        public string? category { get; set; }
         public bool? completed { get; set; }
 
     }

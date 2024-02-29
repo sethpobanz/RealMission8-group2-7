@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RealMission8_group2_7.Models;
 
@@ -10,9 +11,11 @@ using RealMission8_group2_7.Models;
 namespace RealMission8_group2_7.Migrations
 {
     [DbContext(typeof(Mission8ApplicationContext))]
-    partial class Mission8ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20240229020440_initial2")]
+    partial class initial2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.2");
