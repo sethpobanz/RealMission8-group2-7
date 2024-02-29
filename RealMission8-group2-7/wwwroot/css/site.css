@@ -1,22 +1,151 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Add other font styling properties as needed */
+}
+
+/* extra stuff */
+
+.bg-colorful {
+    background-color: royalblue;
+}
+
+.bg-chill {
+    background-color: aliceblue;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Add smooth transition effect */
+}
+
+.nav-item {
+    background-color: royalblue;
+    border-radius: 5px;
+    transition: filter 0.3s ease; /* Change transition property to filter */
+}
+
+    .nav-item:hover {
+        filter: brightness(1.5);
+    }
+
+
+.padding-below {
+    padding-bottom: 50px;
+}
+
+.padding-below-sm {
+    padding-bottom: 20px;
+}
+
+#taskTxtBox {
+    width: 300px;
+    height: 75px; /* Adjust the height as needed */
+    vertical-align: top; /* Set vertical-align to top */
+    padding-top: 0; /* Ensure zero padding at the top */
+    line-height: 1; /* Set line-height to 1 */
+    /*font-size: 16px;*/
+}
+
+#wideInput {
+    width: 300px;
+}
+
+#smallInput {
+    width: 100px;
+}
+
+#dueDate {
+    width: 200px;
+}
+
+.custom-radio {
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Center the items horizontally */
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.completeBtn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #eaeaea;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add smooth transition effect */
+}
+
+
+    .completeBtn:hover {
+        background-color: darkgray;
+    }
+
+input[type="radio"]:checked + .completeBtn {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* Custom style for buttons */
+button {
+    background-color: royalblue; /* Salmon color for the button */
+    color: #fff; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 20px; /* Adjust padding for better appearance */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Specify font-family for titles */
+    font-size: 16px; /* Adjust font size */
+    cursor: pointer; /* Change cursor on hover */
+    transition: filter 0.3s ease; /* Add smooth transition effect */
+}
+
+    button:hover {
+        filter: brightness(1.5);
+    }
+
+p {
+    font-family:'Segoe UI';
+}
+
+h1 {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h3 {
+    font-family:Cambria;
+}
+
+a {
+    text-decoration:none;
+    color:white;
+}
+
+.coloredcol {
+    background-color:lightsteelblue;
+}
+
+.coloredcol img {
+    width: 100%; /* Make images fill the entire column width */
+    padding: 30px; /* Add padding around the images */
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
 }

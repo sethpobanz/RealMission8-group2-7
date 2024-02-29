@@ -8,45 +8,66 @@
     ViewData["Title"] = "Edit Page";
 }
 @model RealMission8_group2_7.Models.TaskModel
+<div class="container">
+    <div class="align-items-center text-center">
+        <h1>Update or Add Task Form</h1>
+        <h4 style="font-style:italic">Enter info here:</h4>
+    </div>
+    <div class="align-items-center text-center">
+        <form class="text-center" method="post">
+            <input type="hidden" asp-for="TaskId" />
 
-<h1>Update or Add Task Form</h1>
+            <label asp-for="quadrant">Quadrant</label><br />
+            <select class="wideInput" asp-for="quadrant" id="quadrant" name="quadrant" >
+                <option value="">Select a Quadrant</option>
 
-<form method="post">
+                <option value="quadrant1">Quadrant 1 : Urgent and Important</option>
+                <option value="quadrant2">Quadrant 2 : Not Urgent but Important</option>
+                <option value="quadrant3">Quadrant 3 : Urgent but Not Important</option>
+                <option value="quadrant4">Quadrant 4 : Not Urgent and Not Important</option>
+            </select><br />
+            <span asp-validation-for="quadrant" class="text-danger"></span>
 
-    <input type="hidden" asp-for="TaskId" />
-    <label asp-for="quadrant">Quadrant</label>
-    <select asp-for="quadrant">
-        <option>Quadrant 1 : Urgent and Important</option>
-        <option>Quadrant 2 : Not Urgent but Important</option>
-        <option>Quadrant 3 : Urgent but Not Important</option>
-        <option>Quadrant 4 : Not Urgent and Not Important</option>
-    </select>
 
-    <br />
-    <label asp-for="task">Task</label>
-    <input type="text" asp-for="task"/>
+            <br /><br />
+            <label asp-for="task">Task</label><br />
+            <textarea type="text" asp-for="task" id="taskTxtBox" name="taskTxtBox" ></textarea><br />
+            <span asp-validation-for="task" class="text-danger"></span>
 
-    <br />
-    <label asp-for="category">Category</label>
-    <select asp-for="category">
-        <option>Home</option>
-        <option>School</option>
-        <option>Work</option>
-        <option>Church</option>
-    </select>
 
-    <br />
-    <label asp-for="duedate">Due Date</label>
-    <input type="text" asp-for="duedate"/>
+            <br /><br />
+            <label asp-for="category" >Category</label><br />
+            <select class="wideInput" asp-for="category" id="category" name="category">
+                <option value="">Select a Category</option>
 
-    <br />
-    <label asp-for="completed">Task Completed?</label>
-    <select asp-for="completed">
-        <option value="true">Yes</option>
-        <option value="false">No</option>
-    </select>
+                <option value="Home">Home</option>
+                <option value="School">School</option>
+                <option value="Work">Work</option>
+                <option value="Church">Church</option>
+            </select><br />
+            <span asp-validation-for="category" class="text-danger"></span>
 
-    <br />
-    <button>Submit</button>
-</form>
 
+            <br /><br />
+            <label asp-for="duedate">Due Date</label><br />
+            <input class="smallInput" type="date" asp-for="duedate" id="dueDate" name="dueDate" /><br />
+            <span asp-validation-for="duedate" class="text-danger"></span>
+
+
+            <br /><br />
+            <label asp-for="completed">Task Completed?</label><br />
+            <div class="custom-radio align-items-center">
+                <input type="radio" id="completedYes" name="completed" value="Yes" >
+                <label class="completeBtn" for="completedYes">YES</label>
+
+                <input type="radio" id="completedNo" name="completed" value="No">
+                <label class="completeBtn" for="completedNo">NO</label>
+            </div><br />
+            <span asp-validation-for="completed" class="text-danger"></span>
+
+
+            <br /><br />
+            <button type="submit"><img src="~/img/goallogo.png" width="30" />   SUBMIT</button>
+        </form>
+    </div>
+</div>
