@@ -131,8 +131,9 @@ h1 {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-h3 {
-    font-family:Cambria;
+h3, h4 {
+    font-family: Cambria;
+    font-style: italic;
 }
 
 a {
@@ -141,7 +142,9 @@ a {
 }
 
 .coloredcol {
-    background-color:lightsteelblue;
+    background-color: lightsteelblue;
+    margin: 0;
+    padding: 0;
 }
 
 .coloredcol img {
