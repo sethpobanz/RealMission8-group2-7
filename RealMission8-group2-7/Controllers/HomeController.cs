@@ -48,9 +48,9 @@ namespace RealMission8_group2_7.Controllers
         }
         
         [HttpPost]
-        public IActionResult Edit(TaskModel updatedMovie)
+        public IActionResult Edit(TaskModel updatedTask)
         {
-            _repo.UpdateTask(updatedMovie);
+            _repo.UpdateTask(updatedTask);
 
             return RedirectToAction("Quadrant");
         }
