@@ -21,17 +21,17 @@
             <select class="wideInput" asp-for="quadrant" id="quadrant" name="quadrant" >
                 <option value="">Select a Quadrant</option>
 
-                <option value="quadrant1">Quadrant 1 : Urgent and Important</option>
-                <option value="quadrant2">Quadrant 2 : Not Urgent but Important</option>
-                <option value="quadrant3">Quadrant 3 : Urgent but Not Important</option>
-                <option value="quadrant4">Quadrant 4 : Not Urgent and Not Important</option>
+                <option value="Quadrant 1 : Urgent and Important">Quadrant 1 : Urgent and Important</option>
+                <option value="Quadrant 2 : Not Urgent but Important">Quadrant 2 : Not Urgent but Important</option>
+                <option value="Quadrant 3 : Urgent but Not Important">Quadrant 3 : Urgent but Not Important</option>
+                <option value="Quadrant 4 : Not Urgent and Not Important">Quadrant 4 : Not Urgent and Not Important</option>
             </select><br />
             <span asp-validation-for="quadrant" class="text-danger"></span>
 
 
             <br /><br />
             <label asp-for="task">Task</label><br />
-            <textarea type="text" asp-for="task" id="taskTxtBox" name="taskTxtBox" ></textarea><br />
+            <input type="text" asp-for="task" style="width: 300px; height:50px" wrap="on" /><br />
             <span asp-validation-for="task" class="text-danger"></span>
 
 
@@ -57,13 +57,14 @@
             <br /><br />
             <label asp-for="completed">Task Completed?</label><br />
             <div class="custom-radio align-items-center">
-                <input type="radio" id="completedYes" name="completed" value="Yes" >
+                <input asp-for="completed" type="radio" id="completedYes" name="completed" value="true">
                 <label class="completeBtn" for="completedYes">YES</label>
 
-                <input type="radio" id="completedNo" name="completed" value="No">
+                <input asp-for="completed" type="radio" id="completedNo" name="completed" value="false">
                 <label class="completeBtn" for="completedNo">NO</label>
             </div><br />
             <span asp-validation-for="completed" class="text-danger"></span>
+
 
 
             <br /><br />
