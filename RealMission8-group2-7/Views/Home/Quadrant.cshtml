@@ -67,6 +67,8 @@
                 @if (task.quadrant == "Quadrant 1 : Urgent and Important")
                 {
                     <div>@task.task</div>
+                    <a class="btn btn-info" asp-controller="home" asp-action="Edit" asp-route-id="@task.TaskId">Edit</a>
+                    <a class="btn btn-danger" asp-controller="home" asp-action="Delete" asp-route-id="@task.TaskId">Delete</a>
                 }
             }
         </div>
@@ -77,6 +79,8 @@
                 @if (task.quadrant == "Quadrant 2 : Not Urgent but Important")
                 {
                     <div>@task.task</div>
+                    <a class="btn btn-info" asp-controller="home" asp-action="Edit" asp-route-id="@task.TaskId">Edit</a>
+                    <a class="btn btn-danger" asp-controller="home" asp-action="Delete" asp-route-id="@task.TaskId">Delete</a>
                 }
             }
         </div>
@@ -93,6 +97,8 @@
                 @if (task.quadrant == "Quadrant 3 : Urgent but Not Important")
                 {
                     <div>@task.task</div>
+                    <a class="btn btn-info" asp-controller="home" asp-action="Edit" asp-route-id="@task.TaskId">Edit</a>
+                    <a class="btn btn-danger" asp-controller="home" asp-action="Delete" asp-route-id="@task.TaskId">Delete</a>
                 }
             }
         </div>
@@ -103,6 +109,8 @@
                 @if (task.quadrant == "Quadrant 4 : Not Urgent and Not Important")
                 {
                     <div>@task.task</div>
+                    <a class="btn btn-info" asp-controller="home" asp-action="Edit" asp-route-id="@task.TaskId">Edit</a>
+                    <a class="btn btn-danger" asp-controller="home" asp-action="Delete" asp-route-id="@task.TaskId">Delete</a>
                 }
             }
         </div>

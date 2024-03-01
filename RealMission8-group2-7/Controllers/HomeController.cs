@@ -36,7 +36,13 @@ namespace RealMission8_group2_7.Controllers
         {
             _repo.AddTask(response);
 
-            return RedirectToAction("Quadrant");
+            return RedirectToAction("Success");
+        }
+
+        [HttpGet]
+        public IActionResult Success()
+        {
+            return View();
         }
 
         [HttpGet]
