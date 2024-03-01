@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model TaskModel
+
+<h2>Confirm Completed</h2>
+
+<form class="text-center" method="post">
+    <!-- Hidden input for TaskId -->
+    <input type="hidden" asp-for="TaskId" />
+
+    <!-- Hidden inputs for other properties -->
+    <input type="hidden" asp-for="quadrant" />
+    <input type="hidden" asp-for="task" />
+    <input type="hidden" asp-for="category" />
+    <input type="hidden" asp-for="duedate" />
+
+    <!-- Hidden input for completed -->
+    <input type="hidden" asp-for="completed" value="true" />
+
+
+    <label>Mark @Model.task as Completed?</label>
+ 
+    <br />
+    <span asp-validation-for="completed" class="text-danger"></span>
+
+    <!-- Submit button -->
+    <br /><br />
+    <button type="submit" class="btn btn-primary">Complete</button>
+    <a class="btn btn-danger" asp-controller="Home" asp-action="Quadrant">Cancel</a>
+</form>
+
+
+
+  
+

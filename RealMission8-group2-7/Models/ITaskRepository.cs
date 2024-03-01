@@ -9,5 +9,7 @@
         public void UpdateTask(TaskModel task);
 
         public void DeleteTask(TaskModel task);
+
+     
     }
 }

@@ -78,6 +78,23 @@ namespace RealMission8_group2_7.Controllers
             return RedirectToAction("Quadrant");
         }
 
+        [HttpGet]
+        public IActionResult Completed(int id)
+        {
+            var recordToComplete = _repo.Tasks.Single(y => y.TaskId == id);
+
+            return View(recordToComplete);
+
+        }
+
+        [HttpPost]
+        public IActionResult Completed(TaskModel tasktocomplete)
+        {
+            _repo.UpdateTask(tasktocomplete);
+            return RedirectToAction("Quadrant");
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -29,5 +29,7 @@ namespace RealMission8_group2_7.Models
             _context.Remove(task);
             _context.SaveChanges();
         }
+
+       
     }
 }
