@@ -29,6 +29,7 @@ namespace RealMission8_group2_7.Controllers
         [HttpGet]
         public IActionResult Form()
         {
+            ViewBag.Categories = _repo.Categories.OrderBy(x => x.Category).ToList();
             return View(new TaskModel());
         }
 
@@ -36,6 +37,8 @@ namespace RealMission8_group2_7.Controllers
         public IActionResult Form(TaskModel response)
         {
             _repo.AddTask(response);
+
+            ViewBag.Categories = _repo.Categories.OrderBy(x => x.Category).ToList();
 
             return RedirectToAction("Success");
         }
@@ -54,6 +57,7 @@ namespace RealMission8_group2_7.Controllers
             {
                 return NotFound(); // or handle the case where the task doesn't exist
             }
+            ViewBag.Categories = _repo.Categories.ToList();
 
             return View("Form", recordToEdit);
         }

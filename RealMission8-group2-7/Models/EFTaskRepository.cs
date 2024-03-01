@@ -12,6 +12,8 @@ namespace RealMission8_group2_7.Models
 
         public List<TaskModel> Tasks => _context.Tasks.ToList();
 
+        public List<Categories> Categories => _context.Categories.ToList();
+
         public void AddTask(TaskModel task)
         {
             _context.Add(task);

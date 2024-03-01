@@ -38,16 +38,15 @@
                     
                 </div>
                 <div class="col-6">
-                    <label asp-for="category">Category</label><br />
-                    <select class="wideInput" asp-for="category" id="category" name="category">
+                    <label asp-for="CategoryId">Category</label><br />
+                    <select class="wideInput" asp-for="CategoryId">
                         <option value="">Select a Category</option>
-
-                        <option value="Home">Home</option>
-                        <option value="School">School</option>
-                        <option value="Work">Work</option>
-                        <option value="Church">Church</option>
+                        @foreach (Categories c in ViewBag.Categories)
+                        {
+                            <option value="@c.CategoryId">@c.Category</option>
+                        }
                     </select><br />
-                    <span asp-validation-for="category" class="text-danger"></span>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
 
                     <br />
                     <label asp-for="duedate">Due Date</label><br />

@@ -4,7 +4,8 @@
     {
 
         List<TaskModel> Tasks { get; }
-
+        List<Categories> Categories { get; }
+        
         public void AddTask(TaskModel task);
         public void UpdateTask(TaskModel task);
 
