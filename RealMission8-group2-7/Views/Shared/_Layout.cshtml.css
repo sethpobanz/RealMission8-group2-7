@@ -48,6 +48,10 @@ button.accept-policy {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: font-family: 'Montserrat', sans-serif;
     /* Add other font styling properties as needed */
+}
+
+.nav-link {
+    color: white;
 }

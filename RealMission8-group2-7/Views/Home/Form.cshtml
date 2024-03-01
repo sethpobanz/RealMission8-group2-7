@@ -9,66 +9,66 @@
 }
 @model RealMission8_group2_7.Models.TaskModel
 <div class="container">
-    <div class="align-items-center text-center">
+    <div class="align-items-center text-center padding-below">
         <h1>Update or Add Task Form</h1>
         <h4 style="font-style:italic">Enter info here:</h4>
     </div>
     <div class="align-items-center text-center">
         <form class="text-center" method="post">
-            <input type="hidden" asp-for="TaskId" />
+            <div class="row with-divider">
+                <div class="col-6">
+                    <input type="hidden" asp-for="TaskId" />
 
-            <label asp-for="quadrant">Quadrant</label><br />
-            <select class="wideInput" asp-for="quadrant" id="quadrant" name="quadrant" >
-                <option value="">Select a Quadrant</option>
+                    <label asp-for="quadrant">Quadrant</label><br />
+                    <select class="wideInput" asp-for="quadrant" id="quadrant" name="quadrant">
+                        <option value="">Select a Quadrant</option>
 
-                <option value="Quadrant 1 : Urgent and Important">Quadrant 1 : Urgent and Important</option>
-                <option value="Quadrant 2 : Not Urgent but Important">Quadrant 2 : Not Urgent but Important</option>
-                <option value="Quadrant 3 : Urgent but Not Important">Quadrant 3 : Urgent but Not Important</option>
-                <option value="Quadrant 4 : Not Urgent and Not Important">Quadrant 4 : Not Urgent and Not Important</option>
-            </select><br />
-            <span asp-validation-for="quadrant" class="text-danger"></span>
-
-
-            <br /><br />
-            <label asp-for="task">Task</label><br />
-            <input type="text" asp-for="task" style="width: 300px; height:50px" wrap="on" /><br />
-            <span asp-validation-for="task" class="text-danger"></span>
+                        <option value="Quadrant 1 : Urgent and Important">Quadrant 1 : Urgent and Important</option>
+                        <option value="Quadrant 2 : Not Urgent but Important">Quadrant 2 : Not Urgent but Important</option>
+                        <option value="Quadrant 3 : Urgent but Not Important">Quadrant 3 : Urgent but Not Important</option>
+                        <option value="Quadrant 4 : Not Urgent and Not Important">Quadrant 4 : Not Urgent and Not Important</option>
+                    </select><br />
+                    <span asp-validation-for="quadrant" class="text-danger"></span>
 
 
-            <br /><br />
-            <label asp-for="category" >Category</label><br />
-            <select class="wideInput" asp-for="category" id="category" name="category">
-                <option value="">Select a Category</option>
+                    <br />
+                    <label asp-for="task">Task</label><br />
+                    <input type="text" asp-for="task" style="width: 300px; height:50px" wrap="on" /><br />
+                    <span asp-validation-for="task" class="text-danger"></span>
+                    
+                </div>
+                <div class="col-6">
+                    <label asp-for="category">Category</label><br />
+                    <select class="wideInput" asp-for="category" id="category" name="category">
+                        <option value="">Select a Category</option>
 
-                <option value="Home">Home</option>
-                <option value="School">School</option>
-                <option value="Work">Work</option>
-                <option value="Church">Church</option>
-            </select><br />
-            <span asp-validation-for="category" class="text-danger"></span>
+                        <option value="Home">Home</option>
+                        <option value="School">School</option>
+                        <option value="Work">Work</option>
+                        <option value="Church">Church</option>
+                    </select><br />
+                    <span asp-validation-for="category" class="text-danger"></span>
 
-
-            <br /><br />
-            <label asp-for="duedate">Due Date</label><br />
-            <input class="smallInput" type="date" asp-for="duedate" id="dueDate" name="dueDate" /><br />
-            <span asp-validation-for="duedate" class="text-danger"></span>
-
-
-            <br /><br />
-            <label asp-for="completed">Task Completed?</label><br />
-            <div class="custom-radio align-items-center">
-                <input asp-for="completed" type="radio" id="completedYes" name="completed" value="true">
-                <label class="completeBtn" for="completedYes">YES</label>
-
-                <input asp-for="completed" type="radio" id="completedNo" name="completed" value="false">
-                <label class="completeBtn" for="completedNo">NO</label>
-            </div><br />
-            <span asp-validation-for="completed" class="text-danger"></span>
+                    <br />
+                    <label asp-for="duedate">Due Date</label><br />
+                    <input class="smallInput" type="date" asp-for="duedate" id="dueDate" name="dueDate" /><br />
+                    <span asp-validation-for="duedate" class="text-danger"></span>
 
 
+                    <br />
+                    <label asp-for="completed">Task Completed?</label><br />
+                    <div class="custom-radio align-items-center">
+                        <input asp-for="completed" type="radio" id="completedYes" name="completed" value="true">
+                        <label class="completeBtn" for="completedYes">YES</label>
 
-            <br /><br />
-            <button type="submit"><img src="~/img/goallogo.png" width="30" />   SUBMIT</button>
+                        <input asp-for="completed" type="radio" id="completedNo" name="completed" value="false">
+                        <label class="completeBtn" for="completedNo">NO</label>
+                    </div><br />
+                    <span asp-validation-for="completed" class="text-danger"></span>
+                </div>                    
+            </div>
+            <br />
+            <button type="submit"><img src="~/img/goallogo.png" width="50px" />   SUBMIT</button>
         </form>
     </div>
 </div>
