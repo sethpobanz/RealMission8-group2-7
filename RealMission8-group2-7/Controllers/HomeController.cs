@@ -49,15 +49,11 @@ namespace RealMission8_group2_7.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            var recordToEdit = _repo.Tasks.SingleOrDefault(x => x.TaskId == id);
-            if (recordToEdit == null)
-            {
-                return NotFound(); // or handle the case where the task doesn't exist
-            }
+            var recordToEdit = _repo.Tasks.Single(x => x.TaskId == id);
 
             return View("Form", recordToEdit);
         }
-
+        
         [HttpPost]
         public IActionResult Edit(TaskModel updatedTask)
         {
@@ -69,15 +65,11 @@ namespace RealMission8_group2_7.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var recordToDelete = _repo.Tasks.SingleOrDefault(y => y.TaskId == id);
-            if (recordToDelete == null)
-            {
-                return NotFound(); // or handle the case where the task doesn't exist
-            }
+            var recordToDelete = _repo.Tasks.Single(y => y.TaskId == id);
 
             return View(recordToDelete);
-        }
 
+        }
 
         [HttpPost]
         public IActionResult Delete(TaskModel tasktodelete)
@@ -89,13 +81,10 @@ namespace RealMission8_group2_7.Controllers
         [HttpGet]
         public IActionResult Completed(int id)
         {
-            var recordToComplete = _repo.Tasks.SingleOrDefault(y => y.TaskId == id);
-            if (recordToComplete == null)
-            {
-                return NotFound(); // or handle the case where the task doesn't exist
-            }
+            var recordToComplete = _repo.Tasks.Single(y => y.TaskId == id);
 
             return View(recordToComplete);
+
         }
 
         [HttpPost]
