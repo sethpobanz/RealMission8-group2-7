@@ -11,6 +11,8 @@
 <head>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <style>
         body, h1, h3, h5 {
             font-family: 'Montserrat', sans-serif;
@@ -64,12 +66,18 @@
             <br><h5>Quadrant 1</h5>
             @foreach (var task in Model)
             {
-                @if (task.quadrant == "Quadrant 1 : Urgent and Important")
+                @if (task.quadrant == "Quadrant 1 : Urgent and Important" && task.completed == false)
                 {
                     <div>@task.task</div>
-                    <a class="btn btn-info" asp-controller="home" asp-action="Edit" asp-route-id="@task.TaskId">Edit</a>
-                    <a class="btn btn-danger" asp-controller="home" asp-action="Delete" asp-route-id="@task.TaskId">Delete</a>
-                    <a class="btn btn-dark" asp-controller="home" asp-action="Completed" asp-route-id="@task.TaskId">Complete</a>
+                    <a class="btn btn-dark" asp-controller="home" asp-action="Completed" asp-route-id="@task.TaskId">
+                        <i class="fas fa-check"></i>
+                    </a>
+                    <a class="btn btn-info" asp-controller="home" asp-action="Edit" asp-route-id="@task.TaskId">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a class="btn btn-danger" asp-controller="home" asp-action="Delete" asp-route-id="@task.TaskId">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
                 }
             }
         </div>
@@ -77,12 +85,18 @@
             <br><h5>Quadrant 2</h5>
             @foreach (var task in Model)
             {
-                @if (task.quadrant == "Quadrant 2 : Not Urgent but Important")
+                @if (task.quadrant == "Quadrant 2 : Not Urgent but Important" && task.completed == false)
                 {
                     <div>@task.task</div>
-                    <a class="btn btn-info" asp-controller="home" asp-action="Edit" asp-route-id="@task.TaskId">Edit</a>
-                    <a class="btn btn-danger" asp-controller="home" asp-action="Delete" asp-route-id="@task.TaskId">Delete</a>
-                    <a class="btn btn-dark" asp-controller="home" asp-action="Completed" asp-route-id="@task.TaskId">Complete</a>
+                    <a class="btn btn-dark" asp-controller="home" asp-action="Completed" asp-route-id="@task.TaskId">
+                        <i class="fas fa-check"></i>
+                    </a>
+                    <a class="btn btn-info" asp-controller="home" asp-action="Edit" asp-route-id="@task.TaskId">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a class="btn btn-danger" asp-controller="home" asp-action="Delete" asp-route-id="@task.TaskId">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
                 }
             }
         </div>
@@ -96,12 +110,18 @@
             <br><h5>Quadrant 3</h5>
             @foreach (var task in Model)
             {
-                @if (task.quadrant == "Quadrant 3 : Urgent but Not Important")
+                @if (task.quadrant == "Quadrant 3 : Urgent but Not Important" && task.completed == false)
                 {
                     <div>@task.task</div>
-                    <a class="btn btn-info" asp-controller="home" asp-action="Edit" asp-route-id="@task.TaskId">Edit</a>
-                    <a class="btn btn-danger" asp-controller="home" asp-action="Delete" asp-route-id="@task.TaskId">Delete</a>
-                    <a class="btn btn-dark" asp-controller="home" asp-action="Completed" asp-route-id="@task.TaskId">Complete</a>
+                    <a class="btn btn-dark" asp-controller="home" asp-action="Completed" asp-route-id="@task.TaskId">
+                        <i class="fas fa-check"></i>
+                    </a>
+                    <a class="btn btn-info" asp-controller="home" asp-action="Edit" asp-route-id="@task.TaskId">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a class="btn btn-danger" asp-controller="home" asp-action="Delete" asp-route-id="@task.TaskId">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
                 }
             }
         </div>
@@ -109,12 +129,18 @@
             <br><h5>Quadrant 4</h5>
             @foreach (var task in Model)
             {
-                @if (task.quadrant == "Quadrant 4 : Not Urgent and Not Important")
+                @if (task.quadrant == "Quadrant 4 : Not Urgent and Not Important" && task.completed == false)
                 {
                     <div>@task.task</div>
-                    <a class="btn btn-info" asp-controller="home" asp-action="Edit" asp-route-id="@task.TaskId">Edit</a>
-                    <a class="btn btn-danger" asp-controller="home" asp-action="Delete" asp-route-id="@task.TaskId">Delete</a>
-                    <a class="btn btn-dark" asp-controller="home" asp-action="Completed" asp-route-id="@task.TaskId">Complete</a>
+                    <a class="btn btn-dark" asp-controller="home" asp-action="Completed" asp-route-id="@task.TaskId">
+                        <i class="fas fa-check"></i>
+                    </a>
+                    <a class="btn btn-info" asp-controller="home" asp-action="Edit" asp-route-id="@task.TaskId">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a class="btn btn-danger" asp-controller="home" asp-action="Delete" asp-route-id="@task.TaskId">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
                 }
             }
         </div>
