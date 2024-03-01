@@ -1,59 +1,62 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Aim High Home";
 }
 
-<div>
-    <div class="align-items-center text-center">
-        <div class="coloredcol container-fluid">
-            <h4>Welcome to</h4>
-            <h1>AIM HIGH</h1>
-            <h3 class="padding-below">Your Personal Time Management Organizer Matrix</h3>
-        </div>
-        <div class="row padding-below-sm">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 coloredcol bg-gradient text-center">
-                <div class="d-flex flex-column h-100 justify-content-center align-items-center">
-                    <img src="~/img/mantimemanagement.jpg" style="width: 100%;" alt="Time Management Image" />
 
-                    <div class="padding-below d-flex flex-column align-items-center">
-                        <button class="mb-2"><a href="https://www.amazon.com/Habits-Highly-Effective-People-Powerful/dp/0743269519">Purchase Covey's Book</a></button>
-                        <button><a href="https://www.franklincovey.com/the-7-habits/">Learn More of 7 Habits</a></button>
-                    </div>
+<div class="container text-center">
+    <div>
+        <h4>Welcome to</h4>
+        <h1 style="color: cornflowerblue">AIM HIGH</h1>
+        <h3 class="padding-below">Your Personal Time Management Organizer Matrix</h3>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 coloredcol bg-gradient text-center">
+            <div class="d-flex flex-column h-100 justify-content-center align-items-center">
+                <img src="~/img/mantimemanagement.jpg" style="width: 100%;" alt="Time Management Image" />
+
+                <div class="padding-below d-flex flex-column align-items-center">
+                    <button class="mb-2"><a href="https://www.amazon.com/Habits-Highly-Effective-People-Powerful/dp/0743269519">Purchase Covey's Book</a></button>
+                    <button><a href="https://www.franklincovey.com/the-7-habits/">Learn More of 7 Habits</a></button>
                 </div>
             </div>
-            <div class="col-lg-8 col-md-6 col-sm-6 col-xs-6">
-                <div class="d-flex flex-column h-100 justify-content-center align-items-center">
+        </div>
+        <div class="col-lg-8 col-md-6 col-sm-6 col-xs-6">
+            <div class="d-flex flex-column h-100 justify-content-center align-items-center">
 
-                    <h4>Need help managing your time and tasks?</h4>
-                    <p>
-                        Well, you're in luck! AIM HIGH is here to help provide a resource to help you in your efforts!
-                        <br /><br />
-                        The Stephen R. Covey Time Management Matrix is a tool introduced by Stephen Covey in his book "The 7 Habits of Highly Effective People." 
-                        The matrix is a four-quadrant model that helps individuals categorize tasks based on their urgency and importance. It is designed to 
-                        improve time management and productivity by guiding individuals to prioritize tasks effectively.
-                    </p>
+                <h4>Need help managing your time and tasks?</h4>
+                <p>
+                    Well, you're in luck! AIM HIGH is here to help provide a resource to help you in your efforts!
+                    <br /><br />
+                    The Stephen R. Covey Time Management Matrix is a tool introduced by Stephen Covey in his book "The 7 Habits of Highly Effective People." 
+                    The matrix is a four-quadrant model that helps individuals categorize tasks based on their urgency and importance. It is designed to 
+                    improve time management and productivity by guiding individuals to prioritize tasks effectively.
+                </p>
                 
-                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-7">
+    </div>
+    <div class="row padding-below">
+        <div class="col-lg-7 col-md-6 col-sm-6 col-xs-6 text-center">
+            <div class="d-flex flex-column h-100 justify-content-center align-items-center">
                 <p>
                     The Time Management Matrix encourages individuals to spend more time where activities contribute to long-term goals and
                     personal growth. By consciously prioritizing and organizing tasks based on urgency and importance, individuals can enhance their productivity
                     and achieve a better work-life balance.
                     <br /><br />
-                    <h4><b>Proactive planning and focusing are what truly matter to achieve long-term success!</b></h4>
+                    <h4><b>Proactive planning and focusing are what truly matter to <span style="color:cornflowerblue">achieve long-term success</span>!</b></h4>
                 </p>
             </div>
-            <div class="col-5 coloredcol">
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-6 col-xs-6 text-center coloredcol bg-gradient">
+            <div class="d-flex flex-column h-100 justify-content-center align-items-center">
                 <img src="~/img/timemanagesketch.png" width="350" />
             </div>
         </div>
-        <div class="padding-below d-flex flex-column align-items-center">
-            <button class="mb-2"><a asp-controller="Home" asp-action="Quadrant">YOUR TIME MATRIX</a></button>
-            <button><a asp-controller="Home" asp-action="Form">ADD NEW TASK</a></button>
-        </div>
-
+    </div>
+    <div class="padding-below d-flex flex-column align-items-center">
+        <button class="mb-2" style="width: 200px"><a asp-controller="Home" asp-action="Quadrant">YOUR TIME MATRIX</a></button>
+        <button style="width: 200px"><a asp-controller="Home" asp-action="Form">ADD NEW TASK</a></button>
     </div>
 
 </div>
+
