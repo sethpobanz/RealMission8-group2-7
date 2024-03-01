@@ -8,30 +8,103 @@
 }
 @model List<TaskModel>
 
-<div class="text-center">
-    <h1 class="display-4">Quadrant page</h1>
-</div>
-
-<table class="table table-bordered">
-    <thead class="fw-bold">
-        <tr>
-            <th>Task</th>
-            <th>Due Date</th>
-            <th>Quadrant</th>
-            <th>Category</th>
-            <th>Completed</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var task in Model)
-        {
-            <tr>
-                <td>@task.task</td>
-                <td>@task.duedate</td>
-                <td>@task.quadrant</td>
-                <td>@task.category</td>
-                <td>@task.completed</td>
-            </tr>
+<head>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <style>
+        body, h1, h3, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
         }
-    </tbody>
-</table>
+
+        h5 {
+            font-weight: bolder;
+        }
+
+        .important-row,
+        .not-important-row {
+            min-height: 300px;
+        }
+
+        .vertical-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<br>
+<br>
+<div class="container" style="border: 5px solid gray">
+    <div class="row">
+
+        <div class="col text-center" style="border: 1px solid gray" text-align="center">
+            <h1>Stephen Covey's Time Management Matrix</h1>
+        </div>
+
+    </div>
+
+    <div class="row" style="border: 1px solid gray">
+        <div class="col-1 text-center" style="border-right: 1px solid gray">
+        </div>
+        <div class="col text-center">
+            <h3>URGENT</h3>
+        </div>
+        <div class="col text-center" style="border-left: 1px solid gray">
+            <h3>NOT URGENT</h3>
+        </div>
+    </div>
+
+    <div class="row important-row" style="border: 1px solid gray">
+        <div class="col-1 text-center vertical-center" style="border-right: 1px solid gray">
+            <h3 style="writing-mode: vertical-rl; transform: rotate(180deg);">IMPORTANT</h3>
+        </div>
+        <div class="col text-center">
+            <br><h5>Quadrant 1</h5>
+            @foreach (var task in Model)
+            {
+                @if (task.quadrant == "Quadrant 1 : Urgent and Important")
+                {
+                    <div>@task.task</div>
+                }
+            }
+        </div>
+        <div class="col text-center" style="border-left: 1px solid gray">
+            <br><h5>Quadrant 2</h5>
+            @foreach (var task in Model)
+            {
+                @if (task.quadrant == "Quadrant 2 : Not Urgent but Important")
+                {
+                    <div>@task.task</div>
+                }
+            }
+        </div>
+    </div>
+
+    <div class="row not-important-row" style="border: 1px solid gray">
+        <div class="col-1 text-center vertical-center" style="border-right: 1px solid gray">
+            <h3 style="writing-mode: vertical-rl; transform: rotate(180deg);">NOT IMPORTANT </h3>
+        </div>
+        <div class="col text-center">
+            <br><h5>Quadrant 3</h5>
+            @foreach (var task in Model)
+            {
+                @if (task.quadrant == "Quadrant 3 : Urgent but Not Important")
+                {
+                    <div>@task.task</div>
+                }
+            }
+        </div>
+        <div class="col text-center" style="border-left: 1px solid gray">
+            <br><h5>Quadrant 4</h5>
+            @foreach (var task in Model)
+            {
+                @if (task.quadrant == "Quadrant 4 : Not Urgent and Not Important")
+                {
+                    <div>@task.task</div>
+                }
+            }
+        </div>
+    </div>
+</div>
