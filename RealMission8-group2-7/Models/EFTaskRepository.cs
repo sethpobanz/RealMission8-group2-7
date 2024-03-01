@@ -23,5 +23,11 @@ namespace RealMission8_group2_7.Models
             _context.Update(task);
             _context.SaveChanges();
         }
+
+        public void DeleteTask(TaskModel task)
+        {
+            _context.Remove(task);
+            _context.SaveChanges();
+        }
     }
 }

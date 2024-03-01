@@ -7,5 +7,7 @@
 
         public void AddTask(TaskModel task);
         public void UpdateTask(TaskModel task);
+
+        public void DeleteTask(TaskModel task);
     }
 }

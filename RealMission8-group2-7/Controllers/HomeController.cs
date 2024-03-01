@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RealMission8_group2_7.Models;
 using System.Diagnostics;
 
@@ -58,6 +59,22 @@ namespace RealMission8_group2_7.Controllers
         {
             _repo.UpdateTask(updatedTask);
 
+            return RedirectToAction("Quadrant");
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var recordToDelete = _repo.Tasks.Single(y => y.TaskId == id);
+
+            return View(recordToDelete);
+
+        }
+
+        [HttpPost]
+        public IActionResult Delete(TaskModel tasktodelete)
+        {
+            _repo.DeleteTask(tasktodelete);
             return RedirectToAction("Quadrant");
         }
 
