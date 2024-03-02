@@ -16,7 +16,7 @@ namespace RealMission8_group2_7.Models
         public string quadrant { get; set; }
         [ForeignKey("Categories")]
         public int? CategoryId { get; set; }
-        public Categories Categories { get; set; }
+        public Categories? Categories { get; set; }
         public bool? completed { get; set; }
 
     }
